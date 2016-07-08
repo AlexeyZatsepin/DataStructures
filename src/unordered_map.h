@@ -10,6 +10,7 @@ using std::pair;
 const size_t N = 4;
 #endif
 template <class K, class T> class unordered_map;
+
 template <class K, class T> class unordered_map{
 private:
     vector<vector<pair<K,T>>> hashmap;

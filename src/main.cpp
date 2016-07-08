@@ -3,6 +3,8 @@
 #include "unordered_set.h"
 #include "linked_list.h"
 #include "unordered_map.h"
+#include "queue.h"
+#include "heap.h"
 
 using std::cout;
 using std::string;
@@ -110,7 +112,37 @@ int main() {
     unordered_map<int, int> map;
     map.put(1,20);
     map.put(2,16);
-    cout << map.get(1) << map.get(2) ;
+    map.put(2,31);
+    map.put(3,16);
+    map.put(4,29);
+
+    //cout << map.get(1) << map.get(2) ;
+//    for(int entry:map){
+//        cout << entry << endl;
+//    }
+    cout << "---------queue---------"<<endl;
+    queue<int> q(100);
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    cout << q.pop() << endl;
+
+
+    cout << "---------heap---------"<<endl;
+    max_heap<int> heap;
+    heap.add(1);
+    heap.add(10);
+    heap.add(9);
+    heap.add(4);
+    heap.add(19);
+    heap.add(2);
+
+    cout << heap.top() << endl;
+    heap.add(15);
+    while(!heap.isEmpty()){
+        cout << heap.top() << endl;
+        heap.remove();
+    }
     getchar();
     return 0;
 }
